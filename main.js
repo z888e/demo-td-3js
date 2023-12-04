@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     var switchShape = 1;
 
     // Change Rotation variable
-    var changeRotation = 0.7;
+    var changeRotation = 0.07;
 
     // Matrix settings
     const matrixSize = 9; 
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Matrix
     const makeMatrix = (shapeType) => {
         matrixObjects.forEach((object) => {
-            scene.remove(object);
+            scene.remove(object.shape);
         });
     
         for (let i = 0; i < matrixSize; i++) {
@@ -107,9 +107,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const shape = matrixObject.shape;
                 const position = matrixObject.position;
         
-                shape.rotation.x += changeRotation / 10000;
-                shape.rotation.y += changeRotation / 10000;
-                shape.rotation.z += changeRotation / 10000;
+                shape.rotation.x += changeRotation / 10;
+                shape.rotation.y += changeRotation / 10;
+                shape.rotation.z += changeRotation / 10;
             });
 
         renderer.render(scene, camera);
